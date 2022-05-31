@@ -15,8 +15,6 @@ namespace u21437221_HW03.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
