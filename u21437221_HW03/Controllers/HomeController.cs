@@ -40,12 +40,5 @@ namespace u21437221_HW03.Controllers
         {
             return View();
         }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
     }
 }
