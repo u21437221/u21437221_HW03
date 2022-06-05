@@ -15,30 +15,46 @@ namespace u21437221_HW03.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //public ActionResult Index(HttpPostedFileBase file)
-        //{
-        //    try
-        //    {
-        //        if (file.ContentLength > 0)
-        //        {
-        //            string _FileName = Path.GetFileName(file.FileName);
-        //            string _path = Path.Combine(Server.MapPath("~/Media"), _FileName);
-        //            file.SaveAs(_path);
-        //        }
-        //        ViewBag.Message = "File uploaded successfully";
-        //        return View();
-        //    }
-        //    catch
-        //    {
-        //        ViewBag.Message = "File upload failed";
-        //        return View();
-        //    }
-        //}
+        [HttpPost]
+        public ActionResult Index(HttpPostedFileBase file, string option)
+        {
+            try
+            {
+                if (file.ContentLength > 0)
+                {
+                    string _FileName = Path.GetFileName(file.FileName);
+                    if (option == "option1")
+                    {
+                        string _path = Path.Combine(Server.MapPath("~/Media/Documents"), _FileName);
+                        file.SaveAs(_path);
+                    }
+                    else if(option == "option2")
+                    {
+                        string _path = Path.Combine(Server.MapPath("~/Media/Images"), _FileName);
+                        file.SaveAs(_path);
+                    }
+                    else if (option == "option3")
+                    {
+                        string _path = Path.Combine(Server.MapPath("~/Media/Videos"), _FileName);
+                        file.SaveAs(_path);
+                    }
+                    
+                }
+                ViewBag.Message = "File uploaded successfully";
+                return View();
+            }
+            catch
+            {
+                ViewBag.Message = "File upload failed";
+                return View();
+            }
+        }
 
         public ActionResult About()
         {
-            return View();
+            List<Models.PictureModel> picture = new List<Models.PictureModel>();
+            picture.Add(new Models.PictureModel("C:/Users/Thashen/Pictures/IMG_9398.JPG"));
+            return View(picture);
         }
     }
 }

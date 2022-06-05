@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<u21437221_HW03.Models.PictureModel> 
+
+@{
     ViewBag.Title = "About";
 }
 <h2>About Myself, Thashen.</h2>
@@ -18,7 +20,10 @@
             </p>
         </div>
         <div class="col-6 col-sm-4" id="photo">
-            <img src= "C:\Users\Thashen\Pictures\IMG_9398.JPG" class="img-fluid" alt="...">
+            @foreach(var item in Model)
+            {
+            <img src="@item.Picture" class="img-fluid" alt="...">
+            }
         </div>
     </div>
 </div>
