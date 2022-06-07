@@ -52,8 +52,12 @@ namespace u21437221_HW03.Controllers
 
         public ActionResult About()
         {
+            string[] picturefiles = Directory.GetFiles(Server.MapPath("~/MyPicture"));
             List<Models.PictureModel> picture = new List<Models.PictureModel>();
-            picture.Add(new Models.PictureModel("C:/Users/Thashen/Pictures/IMG_9398.JPG"));
+            foreach (string pictureFile in picturefiles)
+            {
+                picture.Add(new Models.PictureModel { Picture = Path.GetFileName(pictureFile) });
+            }
             return View(picture);
         }
     }

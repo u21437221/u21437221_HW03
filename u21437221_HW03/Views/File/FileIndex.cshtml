@@ -4,15 +4,20 @@
     ViewBag.Title = "FileIndex";
 }
 
-<h2>FileIndex</h2>
-
+<h2>Document Files</h2>
+<h3>..."Media/Documents/" folder</h3>
 
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.FileName)
         </th>
-        <th></th>
+        <th>
+            Download Option
+        </th>
+        <th>
+            Delete Option
+        </th>
     </tr>
 
 @foreach (var item in Model) {
@@ -21,8 +26,11 @@
             @Html.DisplayFor(modelItem => item.FileName)
         </td>
         <td>
-            @Html.ActionLink("Download", "DownloadFile", new { Name = item.FileName }, new {@class = "btn btn-success" }) |
-            @Html.ActionLink("Delete", "DeleteFile", new { Name = item.FileName }, new {@class = "btn btn-danger" })
+            @Html.ActionLink("Download", "DownloadFile", new { Name = item.FileName }, new {@class = "btn btn-success" }) 
+            
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "DeleteFile", new { Name = item.FileName }, new { @class = "btn btn-danger" })
         </td>
     </tr>
 }

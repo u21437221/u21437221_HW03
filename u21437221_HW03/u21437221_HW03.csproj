@@ -267,14 +267,15 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\File\FileIndex.cshtml" />
+    <Content Include="Views\Image\ImageIndex.cshtml" />
+    <Content Include="Views\Video\VideoIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Media\Documents\" />
     <Folder Include="Media\Images\" />
     <Folder Include="Media\Videos\" />
-    <Folder Include="Views\Image\" />
-    <Folder Include="Views\Video\" />
+    <Folder Include="MyPicture\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<u21437221_HW03.Models.FileModel>
+
+@{
+    ViewBag.Title = "ImageIndex";
+}
+
+<h2>Image Files</h2>
+<h3>..."Media/Images/" folder</h3>
+
+<link rel="stylesheet" href="/content/jquery.fancybox.css" type="text/css" media="screen" />
+<script type="text/javascript" src="/scripts/jquery.fancybox.pack.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $(".images").fancybox()
+    });
+</script>
+
+@foreach (var item in Model)
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-lg-6">
+                <div class="card" style="width: 18rem;">
+                    <a class="images" href="~/Media/Images/@item.FileName"><img class="card-img-top img-thumbnail" src="~/Media/Images/@item.FileName" alt="Card image cap" width="200" /></a>
+                    <div class="card-body">
+                        <h5>@item.FileName</h5>
+                        @Html.ActionLink("Download", "DownloadFile", new { Name = item.FileName }, new { @class = "btn btn-success" })
+                        @Html.ActionLink("Delete", "DeleteFile", new { Name = item.FileName }, new { @class = "btn btn-danger" })
+                    </div><br />
+                </div>
+            </div>
+        </div> 
+    </div>  
+}
