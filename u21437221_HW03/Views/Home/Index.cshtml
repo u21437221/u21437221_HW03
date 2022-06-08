@@ -10,7 +10,7 @@
  <div class="container">
     <div class="row">
         <div class="col-6 col-sm-4" id="description">
-            <h3>Description</h3>
+            <h3>Description</h3> 
             <p>
                 Welcome to the My Media site, where you can upload and download different media files, such
                 as documents, images and videos. Please selct the type of file that you would like to upload,
@@ -23,24 +23,24 @@
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="option" id="Document" value="option1">
                     <label class="form-check-label" for="Document">
-                        Document
-                    </label>
+                        Document  
+                    </label> @*Radio button for the document*@
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="option" id="Images" value="option2">
                     <label class="form-check-label" for="Images">
                         Images
-                    </label>
+                    </label> @*Radio button for the images*@
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="option" id="Videos" value="option3">
                     <label class="form-check-label" for="Videos">
                         Video
-                    </label>
+                    </label> @*Radio button for the videos*@
                 </div>
                 <div class="form-group">
                     <label for="File">Choose File</label>
-                    <input type="file" class="form-control-file" id="File" name="file">
+                    <input type="file" class="form-control-file" id="File" name="file"> @*File submission*@
                 </div>
                 <input class="btn btn-primary" type="submit" value="Submit">
                 @ViewBag.Message

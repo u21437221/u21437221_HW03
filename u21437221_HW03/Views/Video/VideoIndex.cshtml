@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="/content/jquery.fancybox.css" type="text/css" media="screen" />
 <script type="text/javascript" src="/scripts/jquery.fancybox.pack.js"></script>
 
-<script>
+<script> /*fancybox for the video*/
     $(document).ready(function () {
         $(".videos").fancybox()
     });
@@ -21,10 +21,11 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-lg-6">
+                @*Displays the video, video name and download and delete options in cards*@
                 <div class="card" style="width: 18rem;">
                     <a class="videos" href="~/Media/Videos/@item.FileName">
                         <video width="200">
-                            <source src="~/Media/Videos/@item.FileName" type="video/mp4" class="card-img-top"/>
+                            <source src="~/Media/Videos/@item.FileName" type="video/mp4" class="card-img-top" />
                         </video>
                     </a>
                     <div class="card-body">

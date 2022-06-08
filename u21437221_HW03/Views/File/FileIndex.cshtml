@@ -8,7 +8,7 @@
 <h3>..."Media/Documents/" folder</h3>
 
 <table class="table">
-    <tr>
+    <tr> @*table headers*@
         <th>
             @Html.DisplayNameFor(model => model.FileName)
         </th>
@@ -21,7 +21,7 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
+    <tr> @*Displays the documents and download and delete buttons*@
         <td>
             @Html.DisplayFor(modelItem => item.FileName)
         </td>
